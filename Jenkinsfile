@@ -9,12 +9,7 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-    steps {
-        echo 'Fetching code from GitHub...'
-        git 'https://github.com/Sundari-p/doctor-appointment-devops.git'
-    }
-}
+       
 
         stage('Build Docker Image') {
             steps {
