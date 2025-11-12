@@ -10,11 +10,12 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                echo 'Fetching code from GitHub...'
-                git 'https://github.com/Sundari-p/doctor-appointment-devops.git'
-            }
-        }
+    steps {
+        echo 'Cloning repository using full Git path...'
+        bat '"C:\\Program Files\\Git\\bin\\git.exe" clone https://github.com/Sundari-p/doctor-appointment-devops.git .'
+        bat '"C:\\Program Files\\Git\\bin\\git.exe" checkout main'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
